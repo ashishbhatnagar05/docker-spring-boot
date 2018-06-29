@@ -1,0 +1,18 @@
+https://www.evernote.com/shard/s368/nl/150213685/0146fac9-52ac-42e8-ae7d-c0a180908815?title=Docker
+
+    
+	
+	Refer repository: https://github.com/ashishbhatnagar05/docker-spring-boot
+    Need to install docker in the windows/linux
+    go to its setting and allocate the cpu,dsik space etc.
+    if the space is enough it will start running
+    Once the project is checked out , run :
+        mvn package
+        docker build -f Dockerfile -t docker-spring-boot .      (there is a dot in the end)
+        docker images  (the image will be displayed)
+        docker run -p 8085:8085 docker -spring-boot     (specify the port on which the docker needs to deploy the app, also, update this port in applications.properties of boot app)
+        docker ps  (this will display CONTAINER ID and other info)
+        to restart: docker restart CONTAINER_ID
+        to stop: docker stop CONTAINER_ID
+        to start: docker start CONTAINER_ID
+        to stop all images:  docker stop $(docker ps -a -q)
